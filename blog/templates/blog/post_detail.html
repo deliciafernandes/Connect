@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+	<article class="media content-section">
+	<!-- Note: In Detail view, each attribute is called as an object by default, so change all variables from post.  to object.!! -->
+
+
+	<!-- img tag added here so that the homepage can show the author image beside each post -->
+		<img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
+	    <div class="media-body">
+	      <div class="article-metadata">
+	        <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
+	        <small class="text-muted mr-2 pr-5">{{ object.date_posted|date:"F d, Y" }}</small>
+
+	        {% if object.author == user %}
+		        <a class="pl-5 ml-5 secondary" href="{% url 'post-update' object.id %}">Update Post</a>
+		        <a class="ml-5 secondary" href="{% url 'post-delete' object.id %}">Delete Post</a>
+	        {% endif %}
+	        
+	      </div>
+	      <h2 class="article-title">{{ object.title }}</h2>
+	      <p class="article-content">{{ object.content }}</p>
+	    </div>
+	</article>
+{% endblock content %}
