@@ -3,7 +3,7 @@
 > Status:
 
 
-Working on it!
+Working on it
 
 > Tech stack:
 
