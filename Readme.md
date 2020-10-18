@@ -14,3 +14,4 @@ HTML</br>
 CSS</br>
 Bootstrap</br>
 JavaScript</br>
+Python</br>
